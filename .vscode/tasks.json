@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "📂directory",
+            "type": "shell",
+            "command": "pwd",
+        },
+        {
+            "// comentario":"lista el folder de trabajo",
+            "label": "📃listar",
+            "type": "shell",
+            "command": "ls ${workspaceFolder}",
+            "dependsOn": "directory"
+        },
+        {
+            "// comentario": "Este JSON define una tarea para construir una imagen de Docker utilizando el archivo Dockerfile 'initial.dockerfile' ubicado en el directorio 'C:/proyectos/docker/ubuntu/initial', es necesario cambiar el directorio a donde se clone por ejemplo C:/<ruta de trabajo actual>/docker/ubuntu/initial. La imagen resultante se etiqueta como 'initial.ubuntu2:latest'. Esta tarea depende de la existencia previa del directorio 'directory'. Además, se proporcionan opciones visuales para la barra de estado, donde se muestra un icono y un color de fondo específico.",
+            "label": "docker build initial.ubuntu",
+            "type": "shell",
+            "command": "cd 'D:/software Projects/Python Projects/Deep Learning/CNN-RX-COVID19/docker-python-model-training/initial' ; docker build --no-cache -f initial.dockerfile -t initial.ubuntu:latest .",
+            "dependsOn": "directory",
+            "options": {
+                "statusbar": {
+                    "label": "🛠️ DockerBuild",
+                    "backgroundColor": "statusBarItem.warningBackground"
+                }
+            }
+        }
+    ]
+}
