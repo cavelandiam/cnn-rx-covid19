@@ -16,16 +16,16 @@ Estando en la carpeta "**initial**", lanzar el siguiente comando:
 
 Estando en Visual Studio Code, instalamos la extensión Tasks (actboy168.tasks), esto nos permite interactual con la barra de información, adicionalmente automatizar los pasos de compilació, ya con el archivo tasks.json, delimitamos las tareas y que se ejecute.
 
-![Alt text](./img/task.json.png)
+![Alt text](../utils/img/task.json.png)
 
-Compilación usando la extension Tasks y archivo task.json
+# Compilación usando la extension Tasks y archivo task.json
 
 Para usar el DockerBuild se debe ajustar el objeto json, con la ruta donde se clona el repositorio, para el ejemplo se uso la ruta "C:/proyectos/docker/ubuntu/initial" ; docker build --no-cache -f initial.dockerfile -t initial.ubuntu:latest .".
 
 <span style="color: #0DB068">NOTA: Si se va a usar la extension Tasks en Visual Studio Code es necesario actualizar la ruta donde se clono el proyecto, ejemplo:</span>
 `C:/<ruta de trabajo actual>/docker/ubuntu/initial`
 
-![Alt text](./img/barravsc.png)
+![Alt text](../utils/img/barravsc.png)
 
 ## Ejecución de imágenes Docker
 
